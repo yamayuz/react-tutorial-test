@@ -2,9 +2,8 @@ import { useState, memo, useCallback } from "react";
 import { Child1 } from "./components/Child1"
 import { Child4 } from "./components/Child4"
 
-export const App = memo(() => {
+export const App1 = memo(() => {
     console.log("Appレンダリング");
-    
     const [num, setNum] = useState(0);
 
     // 数値+1
@@ -18,7 +17,7 @@ export const App = memo(() => {
     }, []);
     
     return (
-        // 再レンダリング
+        // 再レンダリング(Child1～4.jsx)
         <>
             <button onClick={onClickButton}>ボタン</button>
             <p>{num}</p>
@@ -26,9 +25,7 @@ export const App = memo(() => {
             <Child4 />
         </>
 
-
-
-        // 以下テスト用
+        // Reactの基本(ColoredMessage.jsx)
         // <>
         //     <h1 style={{ color: "red" }}>こんにちは！</h1>
         //     <ColoredMessage color="blue">お元気ですか？</ColoredMessage>
